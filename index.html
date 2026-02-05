@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Hub | Gustavo Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <i class="fas fa-rocket splash-rocket"></i>
+            <h1 class="splash-logo">Marketing Hub</h1>
+            <div class="loader-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-wrapper">
+        <header class="main-header">
+            <div class="top-bar">
+                <div class="location">
+                    <i class="fas fa-rocket" style="color: var(--ifood-red);"></i>
+                    <span>Marketing Hub / <strong>Gustavo</strong></span>
+                </div>
+                <div class="user-avatar">
+                    <img src="https://ui-avatars.com/api/?name=Gustavo&background=EA1D2C&color=fff" alt="Perfil">
+                </div>
+            </div>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="O que sua marca precisa hoje?">
+                </div>
+            </div>
+        </header>
+
+        <nav class="segments-nav">
+            <div class="section-title">
+                <h3>Seu Segmento</h3>
+            </div>
+            <div class="segments-container">
+                <button class="segment-btn active" data-id="roupas">
+                    <div class="icon-box">👗</div>
+                    <span>Roupas</span>
+                </button>
+                <button class="segment-btn" data-id="barbearia">
+                    <div class="icon-box">✂️</div>
+                    <span>Barbearia</span>
+                </button>
+                <button class="segment-btn" data-id="pet">
+                    <div class="icon-box">🐾</div>
+                    <span>Pet Shop</span>
+                </button>
+                <button class="segment-btn" data-id="delivery">
+                    <div class="icon-box">🍕</div>
+                    <span>Delivery</span>
+                </button>
+                <button class="segment-btn" data-id="odonto">
+                    <div class="icon-box">🦷</div>
+                    <span>Odonto</span>
+                </button>
+                <button class="segment-btn" data-id="salao">
+                    <div class="icon-box">💇‍♀️</div>
+                    <span>Salão</span>
+                </button>
+            </div>
+        </nav>
+
+        <main class="dashboard">
+
+            <section class="ia-banner" id="hero-banner">
+                <div class="banner-text">
+                    <span class="badge">IA ATIVA</span>
+                    <h2 id="banner-title">Gerador de Reels</h2>
+                    <p id="banner-desc">Crie roteiros virais para sua loja.</p>
+                </div>
+                <div class="banner-img">
+                    <i class="fas fa-magic fa-3x"></i>
+                </div>
+            </section>
+
+            <section class="tools-section">
+                <div class="section-header">
+                    <h3>Ferramentas para <span id="segment-name-display" style="color: var(--ifood-red);">Roupas</span>
+                    </h3>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-card" onclick="openTool('reels')">
+                        <div class="tool-icon red"><i class="fas fa-video"></i></div>
+                        <div class="tool-content">
+                            <h4 id="tool-reels-title">Reels de Moda</h4>
+                            <small>Trend do dia</small>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" onclick="openTool('calendar')">
+                        <div class="tool-icon orange"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="tool-content">
+                            <h4 id="tool-calendar-title">Datas de Moda</h4>
+                            <small>Planejamento</small>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" onclick="openTool('promo')">
+                        <div class="tool-icon green"><i class="fas fa-percentage"></i></div>
+                        <div class="tool-content">
+                            <h4 id="tool-promo-title">Liquidação</h4>
+                            <small>Calcular Desconto</small>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" onclick="openTool('whatsapp')">
+                        <div class="tool-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                        <div class="tool-content">
+                            <h4 id="tool-wa-title">Script de Venda</h4>
+                            <small>Copiar Texto</small>
+                        </div>
+                    </div>
+
+                    <div class="tool-card full-width" onclick="openTool('ads')">
+                        <div class="tool-icon blue"><i class="fas fa-ad"></i></div>
+                        <div class="tool-content">
+                            <h4 id="tool-ads-title">Anúncio para Loja</h4>
+                            <small>Texto pronto para Instagram Ads</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gamification-box">
+                <div class="reward-header">
+                    <div class="text">
+                        <h3>Checklist de Crescimento</h3>
+                        <p>Complete para ganhar sua <strong>Plaquinha</strong></p>
+                    </div>
+                    <div class="badge-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
+
+                <div class="progress-wrapper">
+                    <div class="progress-info">
+                        <span id="progress-percent">0%</span>
+                        <span id="next-reward">Faltam 5 tarefas</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill" id="progress-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <ul class="checklist-list" id="checklist-tasks">
+                </ul>
+            </section>
+        </main>
+
+        <!-- MODAL STRUCTURE (WIZARD) -->
+        <div id="ai-modal" class="modal-overlay">
+            <div class="modal-container">
+                <div class="wizard-header">
+                    <div class="wizard-steps-indicator" id="wizard-dots">
+                        <div class="step-dot active"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                    </div>
+                </div>
+
+                <div class="modal-body wizard-content" id="wizard-body">
+                    <!-- Dynamic Content Injected via JS -->
+                </div>
+
+                <div class="wizard-footer" id="wizard-footer">
+                    <!-- Buttons Injected via JS -->
+                </div>
+
+                <button class="close-btn" style="position: absolute; top: 15px; right: 15px;" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav class="bottom-tab-bar">
+            <div class="tab-item active"><i class="fas fa-home"></i><span>Início</span></div>
+            <div class="tab-item"><i class="fas fa-chart-line"></i><span>Métricas</span></div>
+            <div class="tab-item"><i class="fas fa-medal"></i><span>Conquistas</span></div>
+            <div class="tab-item"><i class="fas fa-cog"></i><span>Ajustes</span></div>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
