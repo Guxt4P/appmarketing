@@ -483,9 +483,13 @@ body {
     backdrop-filter: blur(4px);
     z-index: 2000;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    /* Center everything horizontally */
     /* Mobile bottom sheet style initially */
+    justify-content: flex-end;
+    /* Push stack to bottom on mobile */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s;
@@ -518,7 +522,8 @@ body {
 
 @media (min-width: 481px) {
     .modal-overlay {
-        align-items: center;
+        justify-content: center;
+        /* Center vertically on desktop */
     }
 
     .modal-container {
@@ -660,6 +665,32 @@ body {
 .wizard-header {
     text-align: center;
     margin-bottom: 25px;
+    min-height: 40px;
+    /* Reserve space */
+}
+
+.wizard-dynamic-title {
+    font-size: 1.25rem;
+    color: var(--white);
+    /* White text for dark overlay */
+    font-weight: 700;
+    margin-bottom: 20px;
+    /* Space between title and modal */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    height: 0;
+    overflow: hidden;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+}
+
+.wizard-dynamic-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .wizard-steps-indicator {
